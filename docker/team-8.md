@@ -5,9 +5,9 @@ The goal of this segment is to help manage the Docker containers, images, and re
 - Docker
 - Python
 - [Python SDK](https://docker-py.readthedocs.io/en/stable/) to handle management and API calls
-- FastAPI for the API framework
 - Loguru for logging
 - Pytest for testing
+- gRPC for the API framework
 
 ## Assignments
 
@@ -121,8 +121,6 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Test edge cases like attempting to stop a non-existent container or stopping a container that has already stopped.
      - Implement error messages that provide clear feedback if stopping the container fails.
 
-
-
 ### Jonah Maligaya - API Developer
 
 #### Task: `inspectDockerContainer` API
@@ -169,4 +167,101 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
   3. **Testing**:
      - Implement a test to ensure the endpoint is connected.
      - Implement a test to ensure that the tail returns the correct amount of logs.
-     - Make sure that the list and dates are accurate.
+     - Make sure that the list and dates are accurate.    
+
+### Ethan Ho - API Developer
+
+#### Task: `buildDockerImage` API
+
+- **Current Status**:
+Establishing the gRPC and setting up the foundations for the API calls. Furthermore, looking into the `Docker SDK` and testing it to better understand it. The goal is to implement an API that can generate a Docker Image given a file path to a Docker file, the name of the image, and optional tags. It would return a status boolean. 
+
+- **Challenges Faced**:  
+  1. Familiarizing myself with the use of `Docker SDK for Python`.
+  2. Understanding how to generate an API using RPC and the gRPC.
+
+- **Next Steps**:  
+  1. **Explore Docker's Options and Niches**:
+     - Expand my understanding of Docker to make sure we have the desired outputs
+   
+  2. **Implement the API Endpoint in gRPC**:
+     - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
+     - Ensure the gRPC application runs on my computer
+     - Begin writing out the API endpoint for `/api/buildDockerImage` to read the Docker file and implement its settings.
+     - Ensure the configurations sent by the tags are implemented.
+     - Use the `Docker SDK` to implement `buildDockerImage`.
+   
+  3. **Testing**:
+     - Implement a test to ensure the API endpoint has a connection.
+     - Implement a test to ensure the API builds a Docker Image.
+     - Ensure all configurations are made as requested from the Docker File.
+     - Ensure all tags are utilized within the Docker Image.
+     - Ensure all edge cases also ensure consistent and proper behavior.
+    
+#### Task: `removeDockerContainer ` API
+
+- **Current Status**:
+Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
+
+- **Challenges Faced**:  
+  1. Familiarizing myself with the use of `Docker SDK for Python`.
+  2. Understanding how to generate an API using gRPC.
+
+- **Next Steps**:  
+  1. **Explore Docker's Options and Niches**:
+     - Expand my understanding of Docker to make sure we have the desired outputs
+   
+  2. **Implement the API Endpoint in gRPC**:
+     - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
+     - Ensure the gRPC application runs on my computer
+     - Begin writing out the API endpoint for `/api/removeDockerContainer` with basic functionality.
+     - Use the `Docker SDK` to implement `removeDockerContainer`.
+   
+  3. **Testing**:
+     - Implement a test to ensure the API endpoint has a connection.
+     - Implement a test to ensure the API can clean up unneeded containers.
+     - Ensure the function provides appropriate responses after running.
+     - Ensure all edge cases also ensure consistent and proper behavior.
+    
+### Payal Naik - API Developer
+#### Task: `listDockerContainers` API
+- **Current Status**:
+I am currently in the early learning phase for this API. I am planning on learning and understanding Docker SDK and Python's interaction with Docker. From there I want to know how to output a list of all running containers. 
+- **Challenges Faced**:  
+  1. Learning the basics for Docker and containers.  
+  2. Understanding and getting familiar with Docker SDK for Python.
+  3. Familiarizing myself with generating APIs using gRPC. 
+- **Next Steps**:  
+  1. **Explore Docker Tools**:
+     - Familiarizing myself with the tools and commands
+   
+  2. **Implement the API Endpoint using gRPC**:
+     - Test Python Docker functionality on virtual environment
+     - Write out the correct endpoint, which is 'api/listDockerContainers' and check response
+     - Develop the correct server-side logic to handle the method using 'Docker SDK'
+     - Correctly utilize the server to implement the 'listDockerContainers'
+   
+  3. **Testing**:
+     - Implement unit tests to check whether the API can output a correct list of running containers
+     - Ensure all edge cases are met, such as in a case where no containers are running
+     - Implement the appropriate responses after running
+    
+#### Task: `cleanDockerSystem` API
+- **Current Status**:
+Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
+- **Challenges Faced**:  
+  1. Understanding how to iterate through containers and images properly to locate ones not being in use. 
+- **Next Steps**:  
+  1. **Explore Docker Tools*:
+     - Familiarizing myself with the tools and commands
+   
+  2. **Implement the API Endpoint using gRPC**:
+     - Test Python Docker functionality on virtual environment
+     - Write out the correct endpoint, which is 'api/cleanDockerSystem' and check response
+     - Develop the correct server-side logic to handle the method using 'Docker SDK'
+     - Correctly utilize the server to implement the 'cleanDockerSystem'
+   
+  3. **Testing**:
+     - Implement unit tests to check whether the API can cleanup unneeded containers or images
+     - Ensure all edge cases are met, such as in a case where there isn't anything to cleanup
+     - Implement the appropriate responses after running
