@@ -5,10 +5,9 @@ The goal of this segment is to help manage the Docker containers, images, and re
 - Docker
 - Python
 - [Python SDK](https://docker-py.readthedocs.io/en/stable/) to handle management and API calls
-- gRPC for the API framework
 - Loguru for logging
 - Pytest for testing
-
+- gRPC for the API framework
 
 ## Assignments
 
@@ -45,9 +44,54 @@ The goal of this segment is to help manage the Docker containers, images, and re
   4. **Testing**:
      - Test running a basic container (like `hello-world`) using the `runDockerContainer` API.
      - Experiment with different environment variables and port mappings to ensure the API parameters work as intended.
-     - Implement error handling in the API to manage scenarios like missing images or invalid parameters.
+     - Implement error messages that provide clear feedback if stopping the container fails.
 
----
+### Ethan Ho - API Developer
+#### Task: `buildDockerImage` API
+- **Current Status**:
+Establishing the gRPC and setting up the foundations for the API calls. Furthermore, looking into the `Docker SDK` and testing it to better understand it. The goal is to implement an API that can generate a Docker Image given a file path to a Docker file, the name of the image, and optional tags. It would return a status boolean. 
+- **Challenges Faced**:  
+  1. Familiarizing myself with the use of `Docker SDK for Python`.
+  2. Understanding how to generate an API using RPC and the FastAPI.
+- **Next Steps**:  
+  1. **Explore Docker's Options and Niches**:
+     - Expand my understanding of Docker to make sure we have the desired outputs
+   
+  2. **Implement the API Endpoint in FastAPI**:
+     - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
+     - Ensure the FastAPI application runs on my computer
+     - Begin writing out the API endpoint for `/api/buildDockerImage` to read the Docker file and implement its settings.
+     - Ensure the configurations sent by the tags are implemented.
+     - Use the `Docker SDK` to implement `buildDockerImage`.
+   
+  3. **Testing**:
+     - Implement a test to ensure the API endpoint has a connection.
+     - Implement a test to ensure the API builds a Docker Image.
+     - Ensure all configurations are made as requested from the Docker File.
+     - Ensure all tags are utilized within the Docker Image.
+     - Ensure all edge cases also ensure consistent and proper behavior.
+    
+#### Task: `removeDockerContainer ` API
+- **Current Status**:
+Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
+- **Challenges Faced**:  
+  1. Familiarizing myself with the use of `Docker SDK for Python`.
+  2. Understanding how to generate an API using RPC and the FastAPI.
+- **Next Steps**:  
+  1. **Explore Docker's Options and Niches**:
+     - Expand my understanding of Docker to make sure we have the desired outputs
+   
+  2. **Implement the API Endpoint in FastAPI**:
+     - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
+     - Ensure the FastAPI application runs on my computer
+     - Begin writing out the API endpoint for `/api/removeDockerContainer` with basic functionality.
+     - Use the `Docker SDK` to implement `removeDockerContainer`.
+   
+  3. **Testing**:
+     - Implement a test to ensure the API endpoint has a connection.
+     - Implement a test to ensure the API can clean up unneeded containers.
+     - Ensure the function provides appropriate responses after running.
+     - Ensure all edge cases also ensure consistent and proper behavior.
 
 #### Task: `stopDockerContainer` API
 
@@ -76,7 +120,54 @@ The goal of this segment is to help manage the Docker containers, images, and re
      - Write unit tests to validate the `stopDockerContainer` API, ensuring it can stop containers by name.
      - Test edge cases like attempting to stop a non-existent container or stopping a container that has already stopped.
      - Implement error messages that provide clear feedback if stopping the container fails.
-    
+
+### Jonah Maligaya - API Developer
+
+#### Task: `inspectDockerContainer` API
+
+- **Current Status**:  
+  Researching the `Docker SDK` and attempting to test it. The goal is to implement an API that can inspect the docker container using its name (string). It is intended to return a dict containing stats such as the status, CPU usage, memory usage, and ports.
+
+- **Challenges Faced**:  
+  1. Accustom myself to `Docker SDK` for Python.
+  2. Learn how to implement this API.
+
+- **Next Steps**:  
+  1. **Research Docker**:
+     - Learn how Docker works and make sure I understand it.
+   
+  2. **Implement using gRPC**:
+     - Make sure the application runs on devices.
+     - Use the gRPC.
+     - Use `Docker SDK` to implement `inspectDockerContainer`
+   
+  3. **Testing**:
+     - Implement a test to ensure the endpoint is connected.
+     - Make sure that all variables mentioned in the dictionary are utilized.
+   
+
+#### Task: `getDockerLogs` API
+
+- **Current Status**:  
+  Researching the `Docker SDK` and attempting to test it. The goal is to implement an API that can get the logs from a Docker that is running using its name (string) and the tail (number of desired logs to return). It is intended to return a list.
+
+- **Challenges Faced**:  
+  1. Accustom myself to `Docker SDK` for Python.
+  2. Learn how to implement this API.
+
+- **Next Steps**:  
+  1. **Research Docker**:
+     - Learn how Docker works and make sure I understand it.
+   
+  2. **Implement using gRPC**:
+     - Make sure the application runs on devices.
+     - Use the gRPC.
+     - Use `Docker SDK` to implement `getDockerLogs`
+   
+  3. **Testing**:
+     - Implement a test to ensure the endpoint is connected.
+     - Implement a test to ensure that the tail returns the correct amount of logs.
+     - Make sure that the list and dates are accurate.    
 
 ### Ethan Ho - API Developer
 
