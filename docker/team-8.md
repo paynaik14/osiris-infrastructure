@@ -1,66 +1,109 @@
-## Assignments
+# Task: `runDockerContainer` API
 
-### Jason Morales - API Developer
+## Current Status
 
-#### Task: `runDockerContainer` API
+I am in the early learning phase for the `runDockerContainer` API. My goal is to understand Docker container management, Python's interaction with Docker through the Docker SDK, and how to expose these functionalities through a **gRPC-based API** within the **Osiris** platform.
 
-- **Current Status**:  
-  I am in the early learning phase for this API. My goal is to understand Docker container management, Python's interaction with Docker through the `Docker SDK`, and how to expose these functionalities through a FastAPI-based API.
+## Challenges Faced
 
-- **Challenges Faced**:  
-  1. Learning Docker concepts, specifically how to start containers, set environment variables, and handle port mapping.
-  2. Getting familiar with the `Docker SDK for Python` to programmatically interact with Docker.
-  3. Understanding how FastAPI can be used to create RESTful endpoints for the Docker management commands.
+- **Understanding Docker Concepts:** Learning how to start containers, set environment variables, and handle port mapping effectively.
+- **Docker SDK for Python:** Getting familiar with the Docker SDK for Python to programmatically interact with Docker.
+- **Implementing gRPC Services:** Transitioning from RESTful APIs to gRPC services, including defining Protocol Buffer messages and service methods.
 
-- **Next Steps**:  
-  1. **Learn Docker Basics**:
-     - Install Docker locally and set up the Docker CLI.
-     - Follow basic tutorials on starting and managing Docker containers using commands like `docker run`, `docker stop`, and `docker ps`.
-     - Understand how to specify environment variables (`-e`) and port mapping (`-p`) when starting a container.
-   
-  2. **Explore Docker SDK for Python**:
-     - Install `Docker SDK for Python` using:  
-       ```bash
-       pip install docker
-       ```
-     - Read through the [Docker SDK for Python documentation](https://docker-py.readthedocs.io/) to understand how to use commands like `client.containers.run()` to start a container and set options like `ports` and `environment`.
-   
-  3. **Implement the API Endpoint in FastAPI**:
-     - Create a basic FastAPI project following a tutorial or the [FastAPI documentation](https://fastapi.tiangolo.com/).
-     - Write a simple route (e.g., `/api/run-container`) and verify it returns a basic response.
-     - Use the `Docker SDK for Python` to integrate the `runDockerContainer` functionality within this route.
-   
-  4. **Testing**:
-     - Test running a basic container (like `hello-world`) using the `runDockerContainer` API.
-     - Experiment with different environment variables and port mappings to ensure the API parameters work as intended.
-     - Implement error handling in the API to manage scenarios like missing images or invalid parameters.
+## Next Steps
+
+### 1. Learn Docker Basics
+
+- **Install Docker Locally:**
+  - Set up Docker on the development machine.
+  - Familiarize yourself with the Docker CLI.
+
+- **Basic Tutorials:**
+  - Follow tutorials on starting and managing Docker containers using commands like `docker run`, `docker stop`, and `docker ps`.
+  - Understand how to specify environment variables (`-e`) and port mapping (`-p`) when starting a container.
+
+### 2. Explore Docker SDK for Python
+
+- **Install Docker SDK:**
+
+    ```bash
+    pip install docker
+    ```
+
+- **Read Documentation:**
+  - Study the [Docker SDK for Python documentation](https://docker-py.readthedocs.io/en/stable/) to understand how to use methods like `client.containers.run()` to start a container and set options like ports and environment variables.
+
+### 3. Define gRPC Service for `runDockerContainer`
+
+- **Update Protocol Buffers:**
+  - Define the `RunDockerContainer` RPC method with appropriate request and response messages in the `docker_management.proto` file.
+
+### 4. Implement the `DockerService` Server
+
+- **Implement the `RunDockerContainer` Method:**
+  - Develop the server-side logic for handling the `RunDockerContainer` RPC method using the Docker SDK.
+  
+- **Containerize the DockerService Server:**
+  - Create a Docker image for the `DockerService` server to ensure consistent deployment across environments.
+
+### 5. Testing
+
+- **Test Running a Basic Container:**
+  - Use the `RunDockerContainer` API to start a simple container (e.g., `hello-world`) and verify its execution.
+
+- **Experiment with Parameters:**
+  - Test different environment variables and port mappings to ensure the API parameters work as intended.
+
+- **Error Handling:**
+  - Implement and test error handling scenarios, such as attempting to start a container with a missing image or invalid parameters.
 
 ---
 
-#### Task: `stopDockerContainer` API
+# Task: `stopDockerContainer` API
 
-- **Current Status**:  
-  I am in the planning and learning phase for this API. My objective is to understand how to identify and stop running Docker containers using the `Docker SDK` and make this action accessible via a FastAPI route.
+## Current Status
 
-- **Challenges Faced**:  
-  1. Understanding how to locate a running container by name using the `Docker SDK`.
-  2. Learning how to stop a Docker container gracefully and verify its status.
-  3. Integrating the stopping functionality into a RESTful API with proper error handling.
+I am in the planning and learning phase for the `stopDockerContainer` API. My objective is to understand how to identify and stop running Docker containers using the Docker SDK and make this action accessible via a **gRPC-based API** within the **Osiris** platform.
 
-- **Next Steps**:  
-  1. **Learn How to Stop Docker Containers**:
-     - Use Docker CLI commands like `docker stop` to understand the basics of stopping containers.
-     - Experiment with stopping containers manually by name or ID and learn how Docker handles container shutdown.
-   
-  2. **Explore Docker SDK for Stopping Containers**:
-     - Use the `Docker SDK for Python` to practice stopping containers. Commands like `client.containers.get('container_name').stop()` will be relevant.
-     - Learn how to check container status after stopping to confirm the operation was successful.
-   
-  3. **Create API Endpoint in FastAPI**:
-     - Add a new route to the FastAPI project (e.g., `/api/stop-container`).
-     - Implement the stopping functionality within this endpoint using the Docker SDK, ensuring you handle potential errors (e.g., container not found).
-   
-  4. **Testing**:
-     - Write unit tests to validate the `stopDockerContainer` API, ensuring it can stop containers by name.
-     - Test edge cases like attempting to stop a non-existent container or stopping a container that has already stopped.
-     - Implement error messages that provide clear feedback if stopping the container fails.
+## Challenges Faced
+
+- **Locating Running Containers:** Understanding how to locate a running container by name using the Docker SDK.
+- **Graceful Shutdown:** Learning how to stop a Docker container gracefully and verify its status.
+- **Implementing gRPC Services:** Integrating the stopping functionality into a gRPC service with proper error handling.
+
+## Next Steps
+
+### 1. Learn How to Stop Docker Containers
+
+- **Docker CLI Commands:**
+  - Use Docker CLI commands like `docker stop` to understand the basics of stopping containers.
+  - Experiment with stopping containers manually by name or ID and observe how Docker handles container shutdown.
+
+### 2. Explore Docker SDK for Stopping Containers
+
+- **Stopping Containers:**
+  - Use the Docker SDK for Python to practice stopping containers programmatically.
+
+- **Check Container Status:**
+  - Learn how to check the container's status after stopping to confirm the operation was successful.
+
+### 3. Define gRPC Service for `stopDockerContainer`
+
+- **Update Protocol Buffers:**
+  - Define the `StopDockerContainer` RPC method with appropriate request and response messages in the `docker_management.proto` file.
+
+### 4. Implement the `DockerService` Server
+
+- **Implement the `StopDockerContainer` Method:**
+  - Develop the server-side logic for handling the `StopDockerContainer` RPC method using the Docker SDK.
+
+### 5. Testing
+
+- **Unit Tests:**
+  - Write unit tests to validate the `StopDockerContainer` API, ensuring it can stop containers by name.
+
+- **Edge Cases:**
+  - Test scenarios such as attempting to stop a non-existent container or stopping a container that has already stopped.
+
+- **Error Messages:**
+  - Implement and test error messages that provide clear feedback if stopping the container fails, such as "Container not found" or "Container already stopped."
