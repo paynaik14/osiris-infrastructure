@@ -131,3 +131,46 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Implement a test to ensure the API can clean up unneeded containers.
      - Ensure the function provides appropriate responses after running.
      - Ensure all edge cases also ensure consistent and proper behavior.
+    
+### Payal Naik - API Developer
+#### Task: `listDockerContainers` API
+- **Current Status**:
+I am currently in the early learning phase for this API. I am planning on learning and understanding Docker SDK and Python's interaction with Docker. From there I want to know how to output a list of all running containers. 
+- **Challenges Faced**:  
+  1. Learning the basics for Docker and containers.  
+  2. Understanding and getting familiar with Docker SDK for Python.
+  3. Familiarizing myself with generating APIs using gRPC. 
+- **Next Steps**:  
+  1. **Explore Docker Tools**:
+     - Familiarizing myself with the tools and commands
+   
+  2. **Implement the API Endpoint using gRPC**:
+     - Test Python Docker functionality on virtual environment
+     - Write out the correct endpoint, which is 'api/listDockerContainers' and check response
+     - Develop the correct server-side logic to handle the method using 'Docker SDK'
+     - Correctly utilize the server to implement the 'listDockerContainers'
+   
+  3. **Testing**:
+     - Implement unit tests to check whether the API can output a correct list of running containers
+     - Ensure all edge cases are met, such as in a case where no containers are running
+     - Implement the appropriate responses after running
+    
+#### Task: `cleanDockerSystem` API
+- **Current Status**:
+Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
+- **Challenges Faced**:  
+  1. Understanding how to iterate through containers and images properly to locate ones not being in use. 
+- **Next Steps**:  
+  1. **Explore Docker Tools*:
+     - Familiarizing myself with the tools and commands
+   
+  2. **Implement the API Endpoint using gRPC**:
+     - Test Python Docker functionality on virtual environment
+     - Write out the correct endpoint, which is 'api/cleanDockerSystem' and check response
+     - Develop the correct server-side logic to handle the method using 'Docker SDK'
+     - Correctly utilize the server to implement the 'cleanDockerSystem'
+   
+  3. **Testing**:
+     - Implement unit tests to check whether the API can cleanup unneeded containers or images
+     - Ensure all edge cases are met, such as in a case where there isn't anything to cleanup
+     - Implement the appropriate responses after running
