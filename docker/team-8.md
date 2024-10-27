@@ -5,7 +5,7 @@ The goal of this segment is to help manage the Docker containers, images, and re
 - Docker
 - Python
 - [Python SDK](https://docker-py.readthedocs.io/en/stable/) to handle management and API calls
-- FastAPI for the API framework
+- gRPC for the API framework
 - Loguru for logging
 - Pytest for testing
 
@@ -87,15 +87,15 @@ Establishing the gRPC and setting up the foundations for the API calls. Furtherm
 
 - **Challenges Faced**:  
   1. Familiarizing myself with the use of `Docker SDK for Python`.
-  2. Understanding how to generate an API using RPC and the FastAPI.
+  2. Understanding how to generate an API using RPC and the gRPC.
 
 - **Next Steps**:  
   1. **Explore Docker's Options and Niches**:
      - Expand my understanding of Docker to make sure we have the desired outputs
    
-  2. **Implement the API Endpoint in FastAPI**:
+  2. **Implement the API Endpoint in gRPC**:
      - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
-     - Ensure the FastAPI application runs on my computer
+     - Ensure the gRPC application runs on my computer
      - Begin writing out the API endpoint for `/api/buildDockerImage` to read the Docker file and implement its settings.
      - Ensure the configurations sent by the tags are implemented.
      - Use the `Docker SDK` to implement `buildDockerImage`.
@@ -114,15 +114,15 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
 
 - **Challenges Faced**:  
   1. Familiarizing myself with the use of `Docker SDK for Python`.
-  2. Understanding how to generate an API using RPC and the FastAPI.
+  2. Understanding how to generate an API using gRPC.
 
 - **Next Steps**:  
   1. **Explore Docker's Options and Niches**:
      - Expand my understanding of Docker to make sure we have the desired outputs
    
-  2. **Implement the API Endpoint in FastAPI**:
+  2. **Implement the API Endpoint in gRPC**:
      - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
-     - Ensure the FastAPI application runs on my computer
+     - Ensure the gRPC application runs on my computer
      - Begin writing out the API endpoint for `/api/removeDockerContainer` with basic functionality.
      - Use the `Docker SDK` to implement `removeDockerContainer`.
    
