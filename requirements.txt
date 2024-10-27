@@ -3,7 +3,6 @@ anyio==4.6.2.post1
 certifi==2024.8.30
 charset-normalizer==3.4.0
 docker==7.1.0
-fastapi==0.115.3
 idna==3.10
 iniconfig==2.0.0
 loguru==0.7.2
