@@ -161,7 +161,7 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
 - **Challenges Faced**:  
   1. Understanding how to iterate through containers and images properly to locate ones not being in use. 
 - **Next Steps**:  
-  1. **Explore Docker Tools*:
+  1. *Explore Docker Tools*:
      - Familiarizing myself with the tools and commands
    
   2. **Implement the API Endpoint using gRPC**:
