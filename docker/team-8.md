@@ -1,3 +1,15 @@
+## Project 
+The goal of this segment is to help manage the Docker containers, images, and related configurations for the Osiris project. 
+
+### Technologies
+- Docker
+- Python
+- [Python SDK](https://docker-py.readthedocs.io/en/stable/) to handle management and API calls
+- gRPC for the API framework
+- Loguru for logging
+- Pytest for testing
+
+
 ## Assignments
 
 ### Jason Morales - API Developer
@@ -64,3 +76,58 @@
      - Write unit tests to validate the `stopDockerContainer` API, ensuring it can stop containers by name.
      - Test edge cases like attempting to stop a non-existent container or stopping a container that has already stopped.
      - Implement error messages that provide clear feedback if stopping the container fails.
+    
+
+### Ethan Ho - API Developer
+
+#### Task: `buildDockerImage` API
+
+- **Current Status**:
+Establishing the gRPC and setting up the foundations for the API calls. Furthermore, looking into the `Docker SDK` and testing it to better understand it. The goal is to implement an API that can generate a Docker Image given a file path to a Docker file, the name of the image, and optional tags. It would return a status boolean. 
+
+- **Challenges Faced**:  
+  1. Familiarizing myself with the use of `Docker SDK for Python`.
+  2. Understanding how to generate an API using RPC and the gRPC.
+
+- **Next Steps**:  
+  1. **Explore Docker's Options and Niches**:
+     - Expand my understanding of Docker to make sure we have the desired outputs
+   
+  2. **Implement the API Endpoint in gRPC**:
+     - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
+     - Ensure the gRPC application runs on my computer
+     - Begin writing out the API endpoint for `/api/buildDockerImage` to read the Docker file and implement its settings.
+     - Ensure the configurations sent by the tags are implemented.
+     - Use the `Docker SDK` to implement `buildDockerImage`.
+   
+  3. **Testing**:
+     - Implement a test to ensure the API endpoint has a connection.
+     - Implement a test to ensure the API builds a Docker Image.
+     - Ensure all configurations are made as requested from the Docker File.
+     - Ensure all tags are utilized within the Docker Image.
+     - Ensure all edge cases also ensure consistent and proper behavior.
+    
+#### Task: `removeDockerContainer ` API
+
+- **Current Status**:
+Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
+
+- **Challenges Faced**:  
+  1. Familiarizing myself with the use of `Docker SDK for Python`.
+  2. Understanding how to generate an API using gRPC.
+
+- **Next Steps**:  
+  1. **Explore Docker's Options and Niches**:
+     - Expand my understanding of Docker to make sure we have the desired outputs
+   
+  2. **Implement the API Endpoint in gRPC**:
+     - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
+     - Ensure the gRPC application runs on my computer
+     - Begin writing out the API endpoint for `/api/removeDockerContainer` with basic functionality.
+     - Use the `Docker SDK` to implement `removeDockerContainer`.
+   
+  3. **Testing**:
+     - Implement a test to ensure the API endpoint has a connection.
+     - Implement a test to ensure the API can clean up unneeded containers.
+     - Ensure the function provides appropriate responses after running.
+     - Ensure all edge cases also ensure consistent and proper behavior.
