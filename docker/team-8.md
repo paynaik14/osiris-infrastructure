@@ -153,13 +153,32 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Using Docker Image ID's when referencing images
    2. **Ensure Docker is running at least on the local machine**:
      - Have docker installed and behaving properly
-  3. **Create API Endpoint in FastAPI**:
+   3. **Create API Endpoint in FastAPI**:
      - Add a new route to the FastAPI project (e.g., `/api/stop-container`).
      - Implement the stopping functionality within this endpoint using the Docker SDK, ensuring you handle potential errors (e.g., container not found).
    
-  4. **Testing**:
+  **Testing**:
      - Test by building a simple image when using the pushDockerImage function with the proper URL
      - Learn to handle authentication if registry requires it. 
+
+#### Task: `pullDockerImage` API
+- **Current Status**:  
+  Related to the other method, I have to understand Docker Images and how to make my endpoint be able to pull docker images
+
+- **Challenges Faced**:  
+  1. Understanding how docker image behaves and its properties.
+  2. Learning how to use our `Docker SDK`.
+
+- **Next Steps**:
+   1. **Setting up docker environment**:
+     - Docker client needs to be accessible in envornment to execute docker commands
+   2. **Learn about `subprocess` modue in python**:
+     - Allows the python program to interact with shell commands such as `docker pull`
+   3. **Construct The Docker Command**:
+     - Formulate the command to pull image from a registry.
+- **Testing**:
+     - Write unit tests to validate function
+     - Check for edge cases where sometimes its a valid or an ivalid images or incorrect registry URL
     
 ### Payal Naik - API Developer
 #### Task: `listDockerContainers` API
