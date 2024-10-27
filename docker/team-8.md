@@ -64,3 +64,31 @@
      - Write unit tests to validate the `stopDockerContainer` API, ensuring it can stop containers by name.
      - Test edge cases like attempting to stop a non-existent container or stopping a container that has already stopped.
      - Implement error messages that provide clear feedback if stopping the container fails.
+
+
+
+#### Kristian Bulusan - API Developer
+
+
+#### Task: `PushDockerImage` API
+- **Current Status**:  
+  I am currently learning about docker images. My objective is to learn the properties of a docker image so that I can use it with the SDK that we are planning to use.
+
+- **Challenges Faced**:  
+  1. Understanding how docker image behaves and its properties.
+  2. Learning how to use our `Docker SDK`.
+
+- **Next Steps**:  
+   1. **Understanding Docker Image Basics**:
+     - Understanding its properties like its name and tags
+     - Different layers of a docker image
+     - Using Docker Image ID's when referencing images
+   2. **Ensure Docker is running at least on the local machine**:
+     - Have docker installed and behaving properly
+  3. **Create API Endpoint in FastAPI**:
+     - Add a new route to the FastAPI project (e.g., `/api/stop-container`).
+     - Implement the stopping functionality within this endpoint using the Docker SDK, ensuring you handle potential errors (e.g., container not found).
+   
+  4. **Testing**:
+     - Test by building a simple image when using the pushDockerImage function with the proper URL
+     - Learn to handle authentication if registry requires it. 
