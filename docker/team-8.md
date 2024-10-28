@@ -14,7 +14,6 @@ The goal of this segment is to help manage the Docker containers, images, and re
 ## Jason Morales - API Developer
 
 ### Task: `runDockerContainer` API
-
 **Current Status:**
 
 I am in the early learning phase for the `runDockerContainer` API. My goal is to understand Docker container management, Python's interaction with Docker through the Docker SDK, and how to expose these functionalities through a **gRPC-based API** within the **Osiris** platform.
@@ -81,22 +80,20 @@ I am in the planning and learning phase for this API. My objective is to underst
    - **Edge Cases:** Test scenarios like attempting to stop a non-existent container or stopping a container that has already stopped.
    - **Error Messages:** Implement and test error messages that provide clear feedback if stopping the container fails, such as "Container not found" or "Container already stopped."
 
----
-
 ### Ethan Ho - API Developer
 #### Task: `buildDockerImage` API
 - **Current Status**:
 Establishing the gRPC and setting up the foundations for the API calls. Furthermore, looking into the `Docker SDK` and testing it to better understand it. The goal is to implement an API that can generate a Docker Image given a file path to a Docker file, the name of the image, and optional tags. It would return a status boolean. 
 - **Challenges Faced**:  
   1. Familiarizing myself with the use of `Docker SDK for Python`.
-  2. Understanding how to generate an API using RPC and the gRPC.
+  2. Understanding how to generate an API using RPC and the FastAPI.
 - **Next Steps**:  
   1. **Explore Docker's Options and Niches**:
      - Expand my understanding of Docker to make sure we have the desired outputs
    
-  2. **Implement the API Endpoint in gRPC**:
+  2. **Implement the API Endpoint in FastAPI**:
      - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
-     - Ensure the gRPC application runs on my computer
+     - Ensure the FastAPI application runs on my computer
      - Begin writing out the API endpoint for `/api/buildDockerImage` to read the Docker file and implement its settings.
      - Ensure the configurations sent by the tags are implemented.
      - Use the `Docker SDK` to implement `buildDockerImage`.
@@ -113,14 +110,14 @@ Establishing the gRPC and setting up the foundations for the API calls. Furtherm
 Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
 - **Challenges Faced**:  
   1. Familiarizing myself with the use of `Docker SDK for Python`.
-  2. Understanding how to generate an API using RPC and the gRPC.
+  2. Understanding how to generate an API using RPC and the FastAPI.
 - **Next Steps**:  
   1. **Explore Docker's Options and Niches**:
      - Expand my understanding of Docker to make sure we have the desired outputs
    
-  2. **Implement the API Endpoint in gRPC**:
+  2. **Implement the API Endpoint in FastAPI**:
      - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
-     - Ensure the gRPC application runs on my computer
+     - Ensure the FastAPI application runs on my computer
      - Begin writing out the API endpoint for `/api/removeDockerContainer` with basic functionality.
      - Use the `Docker SDK` to implement `removeDockerContainer`.
    
@@ -129,6 +126,7 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Implement a test to ensure the API can clean up unneeded containers.
      - Ensure the function provides appropriate responses after running.
      - Ensure all edge cases also ensure consistent and proper behavior.
+
 
 ### Jonah Maligaya - API Developer
 
@@ -221,3 +219,48 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Implement unit tests to check whether the API can cleanup unneeded containers or images
      - Ensure all edge cases are met, such as in a case where there isn't anything to cleanup
      - Implement the appropriate responses after running
+
+
+#### Kristian Bulusan - API Developer
+
+#### Task: `PushDockerImage` API
+- **Current Status**:  
+  I am currently learning about docker images. My objective is to learn the properties of a docker image so that I can use it with the SDK that we are planning to use.
+
+- **Challenges Faced**:  
+  1. Understanding how docker image behaves and its properties.
+  2. Learning how to use our `Docker SDK`.
+
+- **Next Steps**:  
+   1. **Understanding Docker Image Basics**:
+     - Understanding its properties like its name and tags
+     - Different layers of a docker image
+     - Using Docker Image ID's when referencing images
+   2. **Ensure Docker is running at least on the local machine**:
+     - Have docker installed and behaving properly
+   3. **Create API Endpoint in gRPC**:
+     - Add a new route to the gRPC project (e.g., `/api/stop-container`).
+     - Implement the stopping functionality within this endpoint using the Docker SDK, ensuring you handle potential errors (e.g., container not found).
+   
+  **Testing**:
+     - Test by building a simple image when using the pushDockerImage function with the proper URL
+     - Learn to handle authentication if registry requires it. 
+
+#### Task: `pullDockerImage` API
+- **Current Status**:  
+  Related to the other method, I have to understand Docker Images and how to make my endpoint be able to pull docker images
+
+- **Challenges Faced**:  
+  1. Understanding how docker image behaves and its properties.
+  2. Learning how to use our `Docker SDK`.
+
+- **Next Steps**:
+   1. **Setting up docker environment**:
+     - Docker client needs to be accessible in envornment to execute docker commands
+   2. **Learn about `subprocess` modue in python**:
+     - Allows the python program to interact with shell commands such as `docker pull`
+   3. **Construct The Docker Command**:
+     - Formulate the command to pull image from a registry.
+- **Testing**:
+     - Write unit tests to validate function
+     - Check for edge cases where sometimes its a valid or an ivalid images or incorrect registry URL
