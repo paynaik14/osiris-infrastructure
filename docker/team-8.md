@@ -16,12 +16,12 @@ The goal of this segment is to help manage the Docker containers, images, and re
 #### Task: `runDockerContainer` API
 
 - **Current Status**:  
-  I am in the early learning phase for this API. My goal is to understand Docker container management, Python's interaction with Docker through the `Docker SDK`, and how to expose these functionalities through a gRPC-based API.
+  I am in the early learning phase for this API. My goal is to understand Docker container management, Python's interaction with Docker through the `Docker SDK`, and how to expose these functionalities through a FastAPI-based API.
 
 - **Challenges Faced**:  
   1. Learning Docker concepts, specifically how to start containers, set environment variables, and handle port mapping.
   2. Getting familiar with the `Docker SDK for Python` to programmatically interact with Docker.
-  3. Understanding how gRPC can be used to create RESTful endpoints for the Docker management commands.
+  3. Understanding how FastAPI can be used to create RESTful endpoints for the Docker management commands.
 
 - **Next Steps**:  
   1. **Learn Docker Basics**:
@@ -36,8 +36,8 @@ The goal of this segment is to help manage the Docker containers, images, and re
        ```
      - Read through the [Docker SDK for Python documentation](https://docker-py.readthedocs.io/) to understand how to use commands like `client.containers.run()` to start a container and set options like `ports` and `environment`.
    
-  3. **Implement the API Endpoint in gRPC**:
-     - Create a basic gRPC project following a tutorial or the [gRPC documentation](https://gRPC.tiangolo.com/).
+  3. **Implement the API Endpoint in FastAPI**:
+     - Create a basic FastAPI project following a tutorial or the [FastAPI documentation](https://fastapi.tiangolo.com/).
      - Write a simple route (e.g., `/api/run-container`) and verify it returns a basic response.
      - Use the `Docker SDK for Python` to integrate the `runDockerContainer` functionality within this route.
    
@@ -52,14 +52,14 @@ The goal of this segment is to help manage the Docker containers, images, and re
 Establishing the gRPC and setting up the foundations for the API calls. Furthermore, looking into the `Docker SDK` and testing it to better understand it. The goal is to implement an API that can generate a Docker Image given a file path to a Docker file, the name of the image, and optional tags. It would return a status boolean. 
 - **Challenges Faced**:  
   1. Familiarizing myself with the use of `Docker SDK for Python`.
-  2. Understanding how to generate an API using RPC and the gRPC.
+  2. Understanding how to generate an API using RPC and the FastAPI.
 - **Next Steps**:  
   1. **Explore Docker's Options and Niches**:
      - Expand my understanding of Docker to make sure we have the desired outputs
    
-  2. **Implement the API Endpoint in gRPC**:
+  2. **Implement the API Endpoint in FastAPI**:
      - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
-     - Ensure the gRPC application runs on my computer
+     - Ensure the FastAPI application runs on my computer
      - Begin writing out the API endpoint for `/api/buildDockerImage` to read the Docker file and implement its settings.
      - Ensure the configurations sent by the tags are implemented.
      - Use the `Docker SDK` to implement `buildDockerImage`.
@@ -76,14 +76,14 @@ Establishing the gRPC and setting up the foundations for the API calls. Furtherm
 Look into the `Docker SDK` and understand how to remove a Docker Container from the system. Implement an API that would take in a container name and return a boolean regarding success.
 - **Challenges Faced**:  
   1. Familiarizing myself with the use of `Docker SDK for Python`.
-  2. Understanding how to generate an API using RPC and the gRPC.
+  2. Understanding how to generate an API using RPC and the FastAPI.
 - **Next Steps**:  
   1. **Explore Docker's Options and Niches**:
      - Expand my understanding of Docker to make sure we have the desired outputs
    
-  2. **Implement the API Endpoint in gRPC**:
+  2. **Implement the API Endpoint in FastAPI**:
      - Set up a Python virtual environment with an RPC and test some Python Docker functionality. 
-     - Ensure the gRPC application runs on my computer
+     - Ensure the FastAPI application runs on my computer
      - Begin writing out the API endpoint for `/api/removeDockerContainer` with basic functionality.
      - Use the `Docker SDK` to implement `removeDockerContainer`.
    
@@ -96,7 +96,7 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
 #### Task: `stopDockerContainer` API
 
 - **Current Status**:  
-  I am in the planning and learning phase for this API. My objective is to understand how to identify and stop running Docker containers using the `Docker SDK` and make this action accessible via a gRPC route.
+  I am in the planning and learning phase for this API. My objective is to understand how to identify and stop running Docker containers using the `Docker SDK` and make this action accessible via a FastAPI route.
 
 - **Challenges Faced**:  
   1. Understanding how to locate a running container by name using the `Docker SDK`.
@@ -112,8 +112,8 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Use the `Docker SDK for Python` to practice stopping containers. Commands like `client.containers.get('container_name').stop()` will be relevant.
      - Learn how to check container status after stopping to confirm the operation was successful.
    
-  3. **Create API Endpoint in gRPC**:
-     - Add a new route to the gRPC project (e.g., `/api/stop-container`).
+  3. **Create API Endpoint in FastAPI**:
+     - Add a new route to the FastAPI project (e.g., `/api/stop-container`).
      - Implement the stopping functionality within this endpoint using the Docker SDK, ensuring you handle potential errors (e.g., container not found).
    
   4. **Testing**:
