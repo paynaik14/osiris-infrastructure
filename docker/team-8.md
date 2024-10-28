@@ -9,6 +9,7 @@ The goal of this segment is to help manage the Docker containers, images, and re
 - Pytest for testing
 - gRPC for the API framework
 
+Project Link(Github Projects): https://github.com/users/paynaik14/projects/1
 ## Assignments
 
 ## Jason Morales - API Developer
