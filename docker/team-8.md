@@ -178,7 +178,7 @@ Look into the `Docker SDK` and understand how to remove a Docker Container from 
      - Make sure that the list and dates are accurate.    
 
 
-### Payal Naik - API Developer
+### Payal Naik - API Developer (Project Manager)
 #### Task: `listDockerContainers` API
 - **Current Status**:
 I am currently in the early learning phase for this API. I am planning on learning and understanding Docker SDK and Python's interaction with Docker. From there I want to know how to output a list of all running containers. 
