@@ -1,7 +1,11 @@
 import docker
+from dotenv import load_dotenv
+import os
 from docker.errors import APIError
-#username = docker hub username
-#password = docker hub password
+
+load_dotenv()
+username = os.getenv('USERNAME')
+password = os.getenv('PASSWORD')
 appImage = "kb546/docker-quickstart"
 url = "registry.hub.docker.com"
 
